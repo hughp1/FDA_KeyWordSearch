@@ -1,0 +1,29 @@
+Download the FDA clearances that you would like to screen from here - https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPMN/pmn.cfm
+
+and run the below script using the download file
+
+with open('downloaded_txt_file.txt', 'r') as searchfile:
+    lines = searchfile.readlines()
+    strings = (
+    #           "neuro",  "Neuro",
+    #           "brain", "Brain",
+    #           "Quant", "quant",
+    #           "MRI", "mri",
+    #           "hippocamp", "Hippocamp",
+    #           "radiolog", "Radiolog",
+    #           "atroph", "Atroph",
+    #           "cortical", "Cortical",
+    #           "cortex",  "Cortex",
+    #           "dementia", "Dementia",
+    #           "volume", "Volume",
+    #           "alzheimer", "Alzheimer"
+    #           "memory", "Memory",
+    #           "lobar", "Lobar",
+    #           "Lobe" "lobe",
+    #           "structur", "Structur",
+    #           "segment", "Segment",
+    #           "Automatic", "automatic"
+                                            )
+    for line in lines:
+        if any(s in line for s in strings):
+            print(line)
